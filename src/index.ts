@@ -5,6 +5,7 @@ import cors, { CorsOptions } from "cors";
 import session from "express-session";
 import { NODE_ENV, PORT, SESSION_SECRET } from "./utils/config";
 import { connectDB } from "./db/connectDB";
+import authRoutes from "./routes/auth.route"
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use(session({
 	cookie: { secure: NODE_ENV === "production" }
 }));
 
+app.use("/api/auth", authRoutes);
 
 app.get("/api/status", (req, res) => {
 	res.send("Server running successfully!")

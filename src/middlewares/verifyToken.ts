@@ -7,7 +7,7 @@ interface CustomJwtPayload extends JwtPayload {
 	userId: string;
 }
 
-export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
+export const verifyToken = (req: Request, res: Response, next: NextFunction): any => {
 	const token = req.cookies.token;
 	//  console.log("this is token", token)
 	if (!token) {

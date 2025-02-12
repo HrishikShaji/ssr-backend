@@ -6,7 +6,7 @@ import { Profile } from "../models/profile.model"
 import { generateTokenAndSetCookie } from "../utils/generateTokenAndSetCookie"
 
 
-export const signUp = async (req: Request, res: Response) => {
+export const signUp = async (req: Request, res: Response): Promise<any> => {
 	const { email, password, name } = req.body
 
 	try {
@@ -53,7 +53,7 @@ export const signUp = async (req: Request, res: Response) => {
 }
 
 
-export const logIn = async (req: Request, res: Response) => {
+export const logIn = async (req: Request, res: Response): Promise<any> => {
 	const { email, password } = req.body
 
 	try {
@@ -90,7 +90,7 @@ export const logOut = async (req: Request, res: Response) => {
 }
 
 
-export const checkAuth = async (req: Request, res: Response) => {
+export const checkAuth = async (req: Request, res: Response): Promise<any> => {
 	const userId = req.userId
 	console.log("this is userId", userId)
 	try {
